@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.UpdateTask">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Название события" FontSize="24"></Label>
+            <Entry Placeholder="Введите название" Text="{Binding Name}" x:Name="enterName"></Entry>
+            <Label Text="Дата события" FontSize="24"></Label>
+            <DatePicker x:Name="enterDate" ></DatePicker>
+            <Label Text="Время события" FontSize="24"></Label>
+            <TimePicker x:Name="enterTime"></TimePicker>
+            <Label Text="Отметьте статус события" FontSize="24"></Label>
+            <Entry Text="{Binding Status}" Placeholder="Добавьте описание события"></Entry>
+            <Label Text="Добавьте описание события" FontSize="24"></Label>
+            <Entry Text="{Binding Decription}" Placeholder="Добавьте описание события" x:Name="enterDesc"></Entry>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="complLabel" Text="Выполнить: " FontSize="24"></Label>
+                <CheckBox x:Name="compl" CheckedChanged="CheckBox_CheckedChanged" IsChecked ="{Binding Completed}"></CheckBox>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Сохранить" Clicked="SaveTask"/>
+                <Button Text="Удалить" Clicked="DeleteTask"/>
+                <Button Text="Отмена" Clicked="Back"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

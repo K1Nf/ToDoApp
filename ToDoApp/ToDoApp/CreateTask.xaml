@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.CreateTask">
+    <ContentPage.Content>
+        <StackLayout Padding="15,0,0,0">
+            <Label Text="Название события" FontSize="24"></Label>
+            <Entry Placeholder="Введите название"  x:Name="enterName"></Entry>
+            <Label Text="Дата события" FontSize="24"></Label>
+            <DatePicker x:Name="enterDate" ></DatePicker>
+            <Label Text="Время события" FontSize="24"></Label>
+            <TimePicker x:Name="enterTime"></TimePicker>
+            <Label Text="Добавьте описание события" FontSize="24"></Label>
+            <Entry Placeholder="Добавьте описание события" x:Name="enterDesc"></Entry>
+            <Button Text="Add Task" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

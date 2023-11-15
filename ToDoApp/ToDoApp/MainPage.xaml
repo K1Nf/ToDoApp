@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.MainPage">
+
+    <StackLayout BackgroundColor="Aqua" >
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Padding="10,10,10,10">
+            <Label TextColor="Black" Text="Мои задачи" FontSize="28"></Label>
+            <ImageButton Clicked="ImageButton_Clicked" ClassId="Completed" Padding="5" BackgroundColor="WhiteSmoke" HeightRequest="40" WidthRequest="40" Source="https://e7.pngegg.com/pngimages/115/728/png-clipart-check-mark-computer-icons-checkbox-1-miscellaneous-angle.png"></ImageButton>
+            <ImageButton Clicked="ImageButton_Clicked" ClassId="Planned" Padding="5" BackgroundColor="WhiteSmoke" HeightRequest="40" WidthRequest="40" Source="https://e7.pngegg.com/pngimages/509/800/png-clipart-door-organization-tick-cross-angle-logo.png"></ImageButton>
+            <ImageButton Clicked="ImageButton_Clicked" ClassId="" Padding="5" BackgroundColor="WhiteSmoke" HeightRequest="40" WidthRequest="40" Source="https://i.pinimg.com/originals/80/59/e2/8059e25af3bccce85e99b032f7c8e64e.jpg"></ImageButton>
+            <ImageButton Clicked="CreateTask" Padding="5" BackgroundColor="WhiteSmoke" HeightRequest="40" WidthRequest="40" Source="https://d112y698adiu2z.cloudfront.net/photos/production/user_photos/000/686/676/datas/large.png"></ImageButton>
+        </StackLayout>
+
+        <Label x:Name="anyTasks"  IsVisible="false" FontSize="24" TextColor="Black" Text="abcdef" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ></Label>
+        
+        <StackLayout>
+            <ListView RowHeight="200" WidthRequest="350" HorizontalOptions="Center" VerticalOptions="Center" x:Name="taskList" ItemsSource="{Binding}" ItemSelected="SelectedItem">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="LightBlue" HeightRequest="1000" WidthRequest="1000">
+                                    <StackLayout BackgroundColor="Black" Padding="5" Margin="5" MinimumHeightRequest="200" HeightRequest="300">
+                                        <Label TextColor="WhiteSmoke" Text="{Binding Name}" FontSize="28" />
+                                        <Label TextColor="WhiteSmoke" Text="{Binding Date_Time}" FontSize="Medium" />
+                                        <Label TextColor="WhiteSmoke" Text="{Binding Decription}" FontSize="Medium" />
+                                        <StackLayout VerticalOptions="End" Orientation="Horizontal">
+                                            <Label VerticalTextAlignment="Center" TextColor="WhiteSmoke" x:Name="complete" Text="Выполнено: "></Label>
+                                            <CheckBox IsChecked ="{Binding Completed}" IsEnabled="False"></CheckBox>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
+
+
+
+
+
+
+<!--<StackLayout Orientation="Horizontal" BackgroundColor="RosyBrown">
+    <Button BackgroundColor="Beige"  Text="Modify"></Button>
+    <Label BackgroundColor="DarkOrange" Text="Изменить:" TextColor="WhiteSmoke" VerticalTextAlignment="Center"></Label>
+    <CheckBox></CheckBox>
+    <Label BackgroundColor="Gray" x:Name="labelID" Text=""></Label>
+</StackLayout>-->
